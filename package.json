@@ -1,0 +1,32 @@
+{
+  "name": "linebot-covid19-tw3000",
+  "version": "1.0.0",
+  "description": "台灣經濟部因應嚴重特殊傳染性肺炎振興三倍券地圖",
+  "main": "index.js",
+  "repository": "git@github.com:taichunmin/linebot-covid19-tw3000.git",
+  "author": "taichunmin <taichunmin@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@line/bot-sdk": "^7.0.0",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.27.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  },
+  "scripts": {
+    "deploy": "gcloud functions deploy linebot-covid19-tw3000 --region=us-central1 --allow-unauthenticated --entry-point=main --memory=128MB --runtime=nodejs10 --timeout=60s --env-vars-file=.env.yaml --max-instances=1 --trigger-http",
+    "dev": "pm2 start dev.js --name linebot-covid19-tw3000 --watch --ignore-watch=\"node_modules\" --ignore-watch=\".git\" --restart-delay 1000 --no-daemon",
+    "ngrok": "ngrok http 3000"
+  }
+}
