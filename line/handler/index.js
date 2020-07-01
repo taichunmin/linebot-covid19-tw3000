@@ -44,6 +44,6 @@ module.exports = async ({ req, event, line }) => {
     await ga.flush() // 送出 GA 資料
   } catch (err) {
     console.log('line/handler err =', JSON.stringify(err))
-    await event.replyMessage({ type: 'text', text: err.message })
+    await event.replyMessage(require('../view/error')(err.message))
   }
 }

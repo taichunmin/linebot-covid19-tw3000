@@ -1,7 +1,7 @@
 {
   "name": "linebot-covid19-tw3000",
   "version": "1.0.0",
-  "description": "台灣經濟部因應嚴重特殊傳染性肺炎振興三倍券地圖",
+  "description": "振興三倍券查詢器 LINE Chatbot",
   "main": "index.js",
   "repository": "git@github.com:taichunmin/linebot-covid19-tw3000.git",
   "author": "taichunmin <taichunmin@gmail.com>",

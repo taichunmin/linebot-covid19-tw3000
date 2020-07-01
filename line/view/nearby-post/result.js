@@ -128,11 +128,11 @@ const renderPost = post => ({
 module.exports = ({ posts, lat, lng, addr }) => [
   {
     type: 'text',
-    text: '以下是直線距離 10 公里內可以領取振興三倍券的場所：',
+    text: '以下是直線距離 10 公里內可以領取振興三倍券的郵局：',
   },
   {
     type: 'flex',
-    altText: '以下是直線距離 10 公里內可以領取振興三倍券的場所',
+    altText: '以下是直線距離 10 公里內可以領取振興三倍券的郵局',
     contents: {
       type: 'carousel',
       contents: _.map(posts, renderPost),
