@@ -104,7 +104,7 @@ const renderPost = post => ({
       renderHorizontalField('直線距離', formatDistance(post.distance)),
       renderTel(post.tel),
       renderHorizontalField('剩餘數量', post.amount),
-      renderHorizontalField('更新時間', post.updated_at.format('MM/DD')),
+      renderHorizontalField('更新時間', post.updated_at.utcOffset(8).format('MM/DD')),
       renderVerticalField('營業時間', post.busiTime),
       renderVerticalField('營業備註', post.busiMemo || '無'),
     ],
